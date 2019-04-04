@@ -1,9 +1,16 @@
 version: '3'
+
 services:
-  atlab:
-    build: .
+
+  staticnet:
+    build:
+      context: .
     env_file: .env
     volumes:
       - /tmp/:/tmp/
       - /etc/localtime:/etc/localtime:ro
+      - /mnt/scratch07:/external
+      - /mnt/lab/users/datt/:/datt
     ipc: host # needed for multiprocessing (dataloader) in pytorch
+    working_dir: /datt
+

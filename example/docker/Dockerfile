@@ -19,8 +19,12 @@ RUN echo "$ssh_prv_key" > /root/.ssh/id_rsa && \
 
 # Clone Repositories
 WORKDIR /src
-RUN git clone git@github.com:atlab/attorch.git -b pytorch0.4.0 --single-branch
-RUN git clone git@github.com:cajal/neuro_data.git -b master --single-branch
+RUN git clone https://github.com/atlab/attorch.git -b pytorch0.4.0 --single-branch
+RUN git clone https://github.com/cajal/neuro_data.git -b master --single-branch
+#RUN git clone https://github.com/cajal/static-networks.git -b master --single-branch
+
+#RUN git clone git@github.com:atlab/attorch.git -b pytorch0.4.0 --single-branch
+#RUN git clone git@github.com:cajal/neuro_data.git -b master --single-branch
 RUN git clone git@github.com:cajal/static-networks -b master --single-branch
 
 
